@@ -28,4 +28,5 @@ $_title = 'Novo Genero';
             <a class="btn btn-secundary" href="index.php">Voltar</a>
             <button type="submit">Salvar</button>
         </form>
+        
 <?php include('./includes/footer.php') ?>
