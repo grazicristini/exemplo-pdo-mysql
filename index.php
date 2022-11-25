@@ -1,13 +1,13 @@
 <?php
 require_once './vendor/autoload.php';
 
-use ExemploPDOMySQL;
+use ExemploPDOMySQL\MySQLCconnection;
 
 $bd = new PDO('mysql:host=localhost;dbname=biblioteca', 'root', '');
 
 $comando = $bd->prepare('SELECT * FROM generos');
-
 $comando->execute();
+
 $generos = $comando->fetchAll(PDO::FECH_ASSOC);
 
 $_title = 'Generos';
@@ -15,6 +15,7 @@ $_title = 'Generos';
 ?>
 
 <?php include('.includes/header.php') ?>
+
         <a class="btn btn-primary" href="insert.php">Novo Gênero</a>
         <table class="table">
             <tr>
@@ -33,6 +34,5 @@ $_title = 'Generos';
                 </tr>
             <?php endforeach ?>
         </table>
-    </main>
-</body>
-</html>
+
+<?php include('./includes/footer.php') ?>
